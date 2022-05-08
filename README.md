@@ -60,8 +60,8 @@ Notable ones are:
 - `\intersect` and `\union` for code-readable versions of `\cap` and `\cup`  
   `\bigintersect` and `\bigunion` also exist for `\bigcap` and `\bigcup`.
 
-- `\E`,
-  `\P`,
+- `\Exp`,
+  `\Prb`,
   `\Var`, and
   `\Cov`
   for the expectation, probability, variance, and covariance operators,
