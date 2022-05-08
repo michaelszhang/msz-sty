@@ -9,7 +9,7 @@
 \newif\ifmsz@asy         \msz@asyfalse
 \newif\ifmsz@code        \msz@codefalse
 \newif\ifmsz@compact     \msz@compactfalse
-\newif\ifmsz@marginnum   \msz@marginnumtrue
+\newif\ifmsz@marginnum   \msz@marginnumfalse
 \newif\ifmsz@sepcounters \msz@sepcountersfalse
 
 \DeclareOption{nodate}{\msz@datefalse}
@@ -21,7 +21,7 @@
 \DeclareOption{algos}{\msz@algostrue}
 \DeclareOption{code}{\msz@codetrue\msz@algostrue}
 \DeclareOption{compact}{\msz@compacttrue}
-\DeclareOption{nomarginnum}{\msz@marginnumfalse}
+\DeclareOption{marginnum}{\msz@marginnumtrue}
 \DeclareOption{sepcounters}{\msz@sepcounterstrue}
 
 \ProcessOptions*
@@ -38,8 +38,8 @@
 \RequirePackage{mszbase}
 
 % Typography
-\RequirePackage{libertine}
-\RequirePackage[libertine]{newtxmath}
+\RequirePackage{sansmathfonts}
+\renewcommand*\familydefault{\sfdefault}
 \RequirePackage[scaled=0.83]{beramono}
 \SetMathAlphabet\mathtt{normal}{T1}{\ttdefault}{m}{n}
 \SetMathAlphabet\mathtt{bold}{T1}{\ttdefault}{b}{n}

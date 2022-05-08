@@ -16,7 +16,7 @@
 \DeclareOption{algos}{\PassOptionsToPackage{algos}{msz}}
 \DeclareOption{code}{\PassOptionsToPackage{code}{msz}}
 \DeclareOption{compact}{\PassOptionsToPackage{compact}{msz}}
-\DeclareOption{nomarginnum}{\PassOptionsToPackage{nomarginnum}{msz}}
+\DeclareOption{marginnum}{\PassOptionsToPackage{marginnum}{msz}}
 \DeclareOption{sepcounters}{\PassOptionsToPackage{sepcounters}{msz}}
 
 \DeclareOption*{\PassOptionsToPackage{\CurrentOption}{scrartcl}}
