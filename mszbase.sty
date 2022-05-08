@@ -38,6 +38,13 @@
 \NewDocumentCommand{\ol}{}{\overline}
 \NewDocumentCommand{\ul}{}{\underline}
 
+% Mathematical fonts
+\NewDocumentCommand{\mbf}{m}{\mathbf{#1}}
+\NewDocumentCommand{\mbb}{m}{\mathbb{#1}}
+\NewDocumentCommand{\mcl}{m}{\mathcal{#1}}
+\NewDocumentCommand{\mrm}{m}{\mathrm{#1}}
+\NewDocumentCommand{\t}{m}{\text{#1}}
+
 % Syntactically-named delimiters
 \DeclarePairedDelimiter{\braces}{\lbrace}{\rbrace}
 \DeclarePairedDelimiter{\parens}{\lparen}{\rparen}
@@ -72,12 +79,12 @@
 \NewDocumentCommand{\cbrt}{m}{\sqrt[3]{#1}}
 
 % Sets
-\NewDocumentCommand{\FF}{}{\mathbb{F}}
-\NewDocumentCommand{\NN}{}{\mathbb{N}}
-\NewDocumentCommand{\ZZ}{}{\mathbb{Z}}
-\NewDocumentCommand{\QQ}{}{\mathbb{Q}}
-\NewDocumentCommand{\RR}{}{\mathbb{R}}
-\NewDocumentCommand{\CC}{}{\mathbb{C}}
+\NewDocumentCommand{\FF}{}{\mbb{F}}
+\NewDocumentCommand{\NN}{}{\mbb{N}}
+\NewDocumentCommand{\ZZ}{}{\mbb{Z}}
+\NewDocumentCommand{\QQ}{}{\mbb{Q}}
+\NewDocumentCommand{\RR}{}{\mbb{R}}
+\NewDocumentCommand{\CC}{}{\mbb{C}}
 
 \newcommand{\intersect}{\DOTSB\cap} % can't use xparse because it protects \DOTSB
 \NewDocumentCommand{\bigintersect}{}{\bigcap}
@@ -96,8 +103,8 @@
 \DeclareMathOperator{\sign}{sign}
 
 % Combinatorics / Statistics
-\NewDocumentCommand{\Ex}{}{\operatorname*{\mathbb{E}}}
-\NewDocumentCommand{\Pr}{}{\operatorname*{\mathbb{P}}}
+\NewDocumentCommand{\Ex}{}{\operatorname*{\mbb{E}}}
+\NewDocumentCommand{\Pr}{}{\operatorname*{\mbb{P}}}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Cov}{Cov}
 
@@ -109,7 +116,7 @@
 \NewDocumentCommand{\dang}{}{\measuredangle}
 
 % Number Theory
-\RenewDocumentCommand{\mod}{m}{\ \mathrm{mod}\ #1}
+\RenewDocumentCommand{\mod}{m}{\ \mrm{mod}\ #1}
 \DeclareMathOperator*{\gcd}{gcd}
 \DeclareMathOperator*{\lcm}{lcm}
 

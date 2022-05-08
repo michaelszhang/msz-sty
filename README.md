@@ -36,13 +36,25 @@ Notable ones are:
 
 - `\ol{text}` and `\ul{text}` for overline and underline.
 
+- `\mbf`,
+  `\mbb`,
+  `\mcl`, and
+  `\mrm`
+  for
+  `\mathbf`,
+  `\mathbb`,
+  `\mathcal`, and
+  `\mathrm`,
+  respectively.
+
+- `\t{text}` for `\text{text}`.
+
 - `\FF`,
   `\NN`,
   `\ZZ`,
   `\QQ`,
-  `\RR`,
-  `\CC`, and
-  `\HH`
+  `\RR`, and
+  `\CC`
   for `\mathbb` versions of the corresponding letter.
 
 - `\intersect` and `\union` for code-readable versions of `\cap` and `\cup`  
