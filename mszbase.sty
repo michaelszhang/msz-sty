@@ -43,7 +43,7 @@
 \NewDocumentCommand{\mbb}{m}{\mathbb{#1}}
 \NewDocumentCommand{\mcl}{m}{\mathcal{#1}}
 \NewDocumentCommand{\mrm}{m}{\mathrm{#1}}
-\NewDocumentCommand{\t}{m}{\text{#1}}
+\NewDocumentCommand{\tx}{m}{\text{#1}}
 
 % Syntactically-named delimiters
 \DeclarePairedDelimiter{\braces}{\lbrace}{\rbrace}
@@ -103,8 +103,8 @@
 \DeclareMathOperator{\sign}{sign}
 
 % Combinatorics / Statistics
-\NewDocumentCommand{\Ex}{}{\operatorname*{\mbb{E}}}
-\NewDocumentCommand{\Pr}{}{\operatorname*{\mbb{P}}}
+\NewDocumentCommand{\E}{}{\operatorname*{\mbb{E}}}
+\NewDocumentCommand{\P}{}{\operatorname*{\mbb{P}}}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Cov}{Cov}
 
@@ -117,7 +117,6 @@
 
 % Number Theory
 \RenewDocumentCommand{\mod}{m}{\ \mrm{mod}\ #1}
-\DeclareMathOperator*{\gcd}{gcd}
 \DeclareMathOperator*{\lcm}{lcm}
 
 % Calculus
@@ -166,6 +165,5 @@
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\img}{im} % \im is already defined for imaginary part
-\DeclareMathOperator{\ker}{ker}
 
 \endinput

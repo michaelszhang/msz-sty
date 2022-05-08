@@ -60,6 +60,13 @@ Notable ones are:
 - `\intersect` and `\union` for code-readable versions of `\cap` and `\cup`  
   `\bigintersect` and `\bigunion` also exist for `\bigcap` and `\bigcup`.
 
+- `\E`,
+  `\P`,
+  `\Var`, and
+  `\Cov`
+  for the expectation, probability, variance, and covariance operators,
+  respectively.
+
 - `\dv{y}{x}` gives the derivative fraction `\frac{dy}{dx}`.  
   `\ddv{y}{x}` gives the derivative fraction `\frac{d^2y}{dx^2}`.  
   `\dnv{y}{x}{n}` gives the derivative fraction `\frac{d^ny}{dx^n}`.
