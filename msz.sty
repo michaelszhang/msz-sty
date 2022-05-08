@@ -1,28 +1,28 @@
-\ProvidesPackage{chez}
+\ProvidesPackage{msz}
 
-\newif\ifchez@date        \chez@datetrue
-\newif\ifchez@sf          \chez@sftrue
-\newif\ifchez@header      \chez@headerfalse
-\newif\ifchez@gray        \chez@grayfalse
-\newif\ifchez@box         \chez@boxtrue
-\newif\ifchez@algos       \chez@algosfalse
-\newif\ifchez@asy         \chez@asyfalse
-\newif\ifchez@code        \chez@codefalse
-\newif\ifchez@compact     \chez@compactfalse
-\newif\ifchez@marginnum   \chez@marginnumtrue
-\newif\ifchez@sepcounters \chez@sepcountersfalse
+\newif\ifmsz@date        \msz@datetrue
+\newif\ifmsz@sf          \msz@sftrue
+\newif\ifmsz@header      \msz@headerfalse
+\newif\ifmsz@gray        \msz@grayfalse
+\newif\ifmsz@box         \msz@boxtrue
+\newif\ifmsz@algos       \msz@algosfalse
+\newif\ifmsz@asy         \msz@asyfalse
+\newif\ifmsz@code        \msz@codefalse
+\newif\ifmsz@compact     \msz@compactfalse
+\newif\ifmsz@marginnum   \msz@marginnumtrue
+\newif\ifmsz@sepcounters \msz@sepcountersfalse
 
-\DeclareOption{nodate}{\chez@datefalse}
-\DeclareOption{serifs}{\chez@sffalse}
-\DeclareOption{header}{\chez@headertrue}
-\DeclareOption{gray}{\chez@graytrue}
-\DeclareOption{nobox}{\chez@boxfalse}
-\DeclareOption{asy}{\chez@asytrue}
-\DeclareOption{algos}{\chez@algostrue}
-\DeclareOption{code}{\chez@codetrue\chez@algostrue}
-\DeclareOption{compact}{\chez@compacttrue}
-\DeclareOption{nomarginnum}{\chez@marginnumfalse}
-\DeclareOption{sepcounters}{\chez@sepcounterstrue}
+\DeclareOption{nodate}{\msz@datefalse}
+\DeclareOption{serifs}{\msz@sffalse}
+\DeclareOption{header}{\msz@headertrue}
+\DeclareOption{gray}{\msz@graytrue}
+\DeclareOption{nobox}{\msz@boxfalse}
+\DeclareOption{asy}{\msz@asytrue}
+\DeclareOption{algos}{\msz@algostrue}
+\DeclareOption{code}{\msz@codetrue\msz@algostrue}
+\DeclareOption{compact}{\msz@compacttrue}
+\DeclareOption{nomarginnum}{\msz@marginnumfalse}
+\DeclareOption{sepcounters}{\msz@sepcounterstrue}
 
 \ProcessOptions*
 
@@ -34,8 +34,8 @@
 }
 
 % General
-\ifchez@gray\PassOptionsToPackage{gray}{xcolor}\fi
-\RequirePackage{chezbase}
+\ifmsz@gray\PassOptionsToPackage{gray}{xcolor}\fi
+\RequirePackage{mszbase}
 
 % Typography
 \RequirePackage{libertine}
@@ -50,23 +50,23 @@
 % make math output copy-pasteable
 \pdfgentounicode=1
 \input{glyphtounicode}
-\input{chezglyphtounicode}
+\input{mszglyphtounicode}
 
 % Page Margins
 \RequirePackage{geometry}
 \geometry{margin=1.5cm, includefoot}
-\ifchez@header\geometry{includehead}\fi
+\ifmsz@header\geometry{includehead}\fi
 
 % Headers
-\ifchez@header\RequirePackage{scrlayer-scrpage}\fi
+\ifmsz@header\RequirePackage{scrlayer-scrpage}\fi
 
 % Compact Option
-\ifchez@compact\RequirePackage[extreme]{savetrees}\fi
+\ifmsz@compact\RequirePackage[extreme]{savetrees}\fi
 
 % Diagrams
 \RequirePackage{tikz}
 \usetikzlibrary{calc, cd, math, matrix, positioning}
-\ifchez@asy\RequirePackage[inline]{asymptote}\fi
+\ifmsz@asy\RequirePackage[inline]{asymptote}\fi
 
 % Macros
 \RequirePackage[shortlabels, inline]{enumitem}
@@ -74,11 +74,11 @@
 \NewDocumentCommand{\pog}{}{\qedhere}
 
 % Theorem Boxes
-\ifchez@box\RequirePackage{tcolorbox}\fi
+\ifmsz@box\RequirePackage{tcolorbox}\fi
 
 % References
-\PassOptionsToPackage{pdftex, pdfcreator={LaTeX with chez.sty by Jason Chen}}{hyperref}
-\ifchez@gray
+\PassOptionsToPackage{pdftex, pdfcreator={LaTeX with msz.sty by Jason Chen}}{hyperref}
+\ifmsz@gray
   \RequirePackage{hyperref}
 \else
   \RequirePackage[colorlinks]{hyperref} % load this last generally
@@ -89,8 +89,8 @@
 \fi
 
 % Algorithms/Code
-\ifchez@algos\RequirePackage[noend]{algpseudocode}\fi % after hyperref because of counter issue
-\ifchez@code\RequirePackage{minted}\fi
+\ifmsz@algos\RequirePackage[noend]{algpseudocode}\fi % after hyperref because of counter issue
+\ifmsz@code\RequirePackage{minted}\fi
 
 % cleveref must be loaded after hyperref
 % also is really picky and wants to be loaded after everything
@@ -99,23 +99,23 @@
 % SETUP
 \author{Jason Chen}
 
-\ifchez@date\else\date{~\vspace{-3em}}\fi
+\ifmsz@date\else\date{~\vspace{-3em}}\fi
 
 % Stylize things
 \patchcmd{\@maketitle}{\huge}{\large}{}{}
 \setkomafont{author}{\normalsize\scshape}
 \setkomafont{date}{\normalsize}
-\ifchez@sf\else\setkomafont{disposition}{\normalcolor\bfseries}\fi
-\ifchez@header\setkomafont{pageheadfoot}{\normalcolor}\fi
+\ifmsz@sf\else\setkomafont{disposition}{\normalcolor\bfseries}\fi
+\ifmsz@header\setkomafont{pageheadfoot}{\normalcolor}\fi
 \RedeclareSectionCommand[beforeskip=0.4\baselineskip]{paragraph}
 
 % Section numbers in the margin
-\ifchez@marginnum
+\ifmsz@marginnum
   \RenewDocumentCommand{\sectionlinesformat}{m m m m}{\makebox[0pt][r]{#3}#4}
 \fi
 
 % Compact title
-\ifchez@compact
+\ifmsz@compact
   \patchcmd{\@maketitle}{\@author}{\scshape\@author}{}{}
   \patchcmd{\@maketitle}{\large}{\large\sffamily}{}{}
 \fi
@@ -136,13 +136,13 @@
 \RenewDocumentCommand{\underbracket}{O{0.12ex} O{0.5ex} m}{\oldunderbracket[#1][#2]{#3}}
 
 % Theorem boxes (Heavily copied from Daniel Zhu)
-\ifchez@box
+\ifmsz@box
   \tcbuselibrary{skins, theorems, xparse, breakable}
   \tcbset{
-    chezbox/.style={
+    mszbox/.style={
       enhanced jigsaw,
       breakable,
-      fonttitle=\ifchez@sf\sffamily\fi\bfseries,
+      fonttitle=\ifmsz@sf\sffamily\fi\bfseries,
       sharp corners,
       boxrule=0pt,
       leftrule=2pt,
@@ -151,67 +151,67 @@
       attach title to upper=\par,
       lines before break=4,
     },
-    chezbluebox/.style={
-      chezbox,
+    mszbluebox/.style={
+      mszbox,
       coltitle=blue!80!black,
       colframe=blue!80,
       colback=blue!7,
     },
-    chezgreenbox/.style={
-      chezbox,
+    mszgreenbox/.style={
+      mszbox,
       coltitle=green!40!black,
       colframe=green!70!black,
       colback=green!6,
     },
-    chezorangebox/.style={
-      chezbox,
+    mszorangebox/.style={
+      mszbox,
       coltitle=orange!80!black,
       colframe=orange!98!black,
       colback=orange!8,
     },
-    chezredbox/.style={
-      chezbox,
+    mszredbox/.style={
+      mszbox,
       coltitle=red!60!black,
       colframe=red!80!black,
       colback=red!6,
     },
-    chezbluethm/.style={chezbluebox, chezthm},
-    chezgreenthm/.style={chezgreenbox, chezthm},
-    chezorangethm/.style={chezorangebox, chezthm},
-    chezredthm/.style={chezredbox, chezthm},
-    chezthm/.style={
+    mszbluethm/.style={mszbluebox, mszthm},
+    mszgreenthm/.style={mszgreenbox, mszthm},
+    mszorangethm/.style={mszorangebox, mszthm},
+    mszredthm/.style={mszredbox, mszthm},
+    mszthm/.style={
       theorem style=break,
       separator sign none,
       description delimiters parenthesis,
-      description font=\normalfont\ifchez@sf\sffamily\fi\small,
+      description font=\normalfont\ifmsz@sf\sffamily\fi\small,
       terminator sign none,
     },
   }
 
-  \ifchez@marginnum
-    \newcommand*{\chez@drawmarginnumber}[1]{
+  \ifmsz@marginnum
+    \newcommand*{\msz@drawmarginnumber}[1]{
       \node[anchor=north east,
         inner sep=0pt,
         xshift=-0.8em,
         yshift=-1.865ex,
-        font=\ifchez@sf\sffamily\fi\bfseries\color{tcbcoltitle}\mathstrut\small]
+        font=\ifmsz@sf\sffamily\fi\bfseries\color{tcbcoltitle}\mathstrut\small]
         at (frame.north west) {#1};
     }
     \tcbset{
-      chezthmmargin/.style={
+      mszthmmargin/.style={
         enhanced jigsaw,
         theorem name,
         extras unbroken and first={
           overlay={
             \ifdef{\thetcbthmcounter}{
-              \chez@drawmarginnumber{\thetcbthmcounter}
+              \msz@drawmarginnumber{\thetcbthmcounter}
             }{
-              \ifdef{\thetcbcounter}{\chez@drawmarginnumber{\thetcbcounter}}
+              \ifdef{\thetcbcounter}{\msz@drawmarginnumber{\thetcbcounter}}
             }
           },
         },
       },
-      chezthm/.append style=chezthmmargin,
+      mszthm/.append style=mszthmmargin,
     }
   \fi
 
@@ -276,7 +276,7 @@
   }
   \newcounter{thmcounter} \zbs@numberwithin{thmcounter}{\zbs@thm@numberwithin}
   \newcommand\zbs@thmctrmain{thmcounter}
-  \ifchez@sepcounters
+  \ifmsz@sepcounters
     \newcounter{probcounter} \zbs@numberwithin{probcounter}{\zbs@thm@numberwithinalt}
     \newcommand\zbs@thmctralt{probcounter}
   \else
@@ -297,35 +297,35 @@
   \ExplSyntaxOn
   % NOTE: math in adhoctheorem titles must be in $...$, not \(...\)
   \NewTColorBox{adhoctheorem}{O{} m !D(){\zbs@thmctralt} !O{} !D<>{}}{
-    chezorangethm,
+    mszorangethm,
     code={\letcs\thetcbthmcounter{the#3}},
     theorem={{#2}}{#3}{#4}{#5},#1
   }
   \NewTColorBox{adhoctheorem*}{O{} m O{}}{
-    chezorangethm,
+    mszorangethm,
     title={\__tcobox_theo_title:nnn{#2}{\@empty}{#3}},#1
   }
   \ExplSyntaxOff
 
-  \zbsnewtheorem{theorem}{Theorem}{chezbluethm}{thm}{theorem}{theorems}
-  \zbsnewtheorem{lemma}{Lemma}{chezbluethm}{lem}{lemma}{lemmas}
-  \zbsnewtheorem{claim}{Claim}{chezbluethm}{claim}{claim}{claims}
-  \zbsnewtheorem{proposition}{Proposition}{chezbluethm}{prop}{proposition}{propositions}
-  \zbsnewtheorem{corollary}{Corollary}{chezbluethm}{cor}{corollary}{corollaries}
-  \zbsnewtheorem{conjecture}{Conjecture}{chezbluethm}{conj}{conjecture}{conjectures}
-  \zbsnewtheorem{algorithm}{Algorithm}{chezbluethm}{alg}{algorithm}{algorithms}
+  \zbsnewtheorem{theorem}{Theorem}{mszbluethm}{thm}{theorem}{theorems}
+  \zbsnewtheorem{lemma}{Lemma}{mszbluethm}{lem}{lemma}{lemmas}
+  \zbsnewtheorem{claim}{Claim}{mszbluethm}{claim}{claim}{claims}
+  \zbsnewtheorem{proposition}{Proposition}{mszbluethm}{prop}{proposition}{propositions}
+  \zbsnewtheorem{corollary}{Corollary}{mszbluethm}{cor}{corollary}{corollaries}
+  \zbsnewtheorem{conjecture}{Conjecture}{mszbluethm}{conj}{conjecture}{conjectures}
+  \zbsnewtheorem{algorithm}{Algorithm}{mszbluethm}{alg}{algorithm}{algorithms}
 
-  \zbsnewtheorem{definition}{Definition}{chezredthm}{def}{definition}{definitions}
+  \zbsnewtheorem{definition}{Definition}{mszredthm}{def}{definition}{definitions}
 
-  \zbsnewtheorem{example}{Example}{chezgreenthm}{ex}{example}{examples}
+  \zbsnewtheorem{example}{Example}{mszgreenthm}{ex}{example}{examples}
 
-  \zbsnewtheorem{fact}{Fact}{chezorangethm}{fact}{fact}{facts}
-  \zbsnewtheorem{note}{Note}{chezorangethm}{note}{note}{notes}
+  \zbsnewtheorem{fact}{Fact}{mszorangethm}{fact}{fact}{facts}
+  \zbsnewtheorem{note}{Note}{mszorangethm}{note}{note}{notes}
 
-  \zbsnewtheorem*{problem}{Problem}{chezorangethm}{problem}{problem}{problems}
-  \zbsnewtheorem*{question}{Question}{chezorangethm}{question}{question}{questions}
-  \zbsnewtheorem*{exercise}{Exercise}{chezorangethm}{ex}{exercise}{exercises}
-  \zbsnewtheorem*{remark}{Remark}{chezorangethm}{remark}{remark}{remarks}
+  \zbsnewtheorem*{problem}{Problem}{mszorangethm}{problem}{problem}{problems}
+  \zbsnewtheorem*{question}{Question}{mszorangethm}{question}{question}{questions}
+  \zbsnewtheorem*{exercise}{Exercise}{mszorangethm}{ex}{exercise}{exercises}
+  \zbsnewtheorem*{remark}{Remark}{mszorangethm}{remark}{remark}{remarks}
 
   % TODO: footnotes
   % TODO: non-box case
@@ -354,7 +354,7 @@
 \NewDocumentEnvironment{proof*}{m}{\pushQED{\qed}\par\noindent\textit{#1}.}{\popQED\par\medskip}
 
 % Algorithms
-\ifchez@algos
+\ifmsz@algos
   \NewDocumentCommand{\ElseIf}{}{\ElsIf}
 
   % Fix https://tex.stackexchange.com/questions/177025/ issue with
@@ -367,4 +367,4 @@
   \RenewDocumentCommand{\theHALG@line}{}{ALG@line.\thealgorithmicH.\arabic{ALG@line}}
 \fi
 
-\ifchez@code\setminted{linenos=true, breaklines=true, tabsize=4, python3=true, baselinestretch=1}\fi
+\ifmsz@code\setminted{linenos=true, breaklines=true, tabsize=4, python3=true, baselinestretch=1}\fi

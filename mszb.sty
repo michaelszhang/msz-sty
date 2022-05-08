@@ -1,0 +1,121 @@
+\ProvidesPackage{mszb}[2017/09/09]
+\usepackage{amsmath, amssymb, amsthm}
+
+% We include "msz" in all of these to make sure
+% that they do not conflict with any other packages
+\newif\ifmszsetup   \mszsetuptrue
+\newif\ifmszshorts  \mszshortstrue
+\newif\ifmszasy     \mszasytrue
+
+\DeclareOption{nosetup}{\mszasyfalse}
+\DeclareOption{noshortcuts}{\mszshortsfalse}
+\DeclareOption{noasy}{\mszasyfalse}
+\DeclareOption{noauthor}{\mszauthorfalse}
+\DeclareOption{nodate}{\mszdatefalse}
+
+\newif\ifmszbeamernobutton \mszbeamernobuttontrue
+\newif\ifmszbeamernice     \mszbeamernicetrue
+\newif\ifmszallsmallcaps   \mszallsmallcapstrue
+\newif\ifmszthm            \mszthmtrue
+
+\DeclareOption{buttons}{\mszbeamernobuttonfalse}
+\DeclareOption{nobeamernice}{\mszbeamernicefalse}
+\DeclareOption{noallsmallcaps}{\mszallsmallcapsfalse}
+\DeclareOption{nothms}{\mszthmfalse}
+
+\ProcessOptions\relax
+
+\usepackage{mszbase}
+
+\ifmszsetup
+\ifmszbeamernobutton
+  \beamertemplatenavigationsymbolsempty
+\fi
+
+\ifmszthm
+  \newtheorem{proposition}[theorem]{Proposition}
+  \newtheorem{answer}[theorem]{Answer}
+  \newtheorem{case}[theorem]{Case}
+  \newtheorem{claim}[theorem]{Claim}
+  \newtheorem{conjecture}[theorem]{Conjecture}
+  \newtheorem{exercise}[theorem]{Exercise}
+  \newtheorem{idea}[theorem]{Idea}
+  \newtheorem{question}[theorem]{Question}
+  
+  \definecolor{mszdarkred}{rgb}{0.523, 0.148, 0.148}
+  \definecolor{mszpalered}{rgb}{0.949, 0.910, 0.910}
+  \definecolor{mszdarkblue}{rgb}{0.148, 0.148, 0.523}
+  \definecolor{mszpaleblue}{rgb}{0.910, 0.910, 0.949}
+  \definecolor{mszdarkgreen}{rgb}{0.148, 0.523, 0.148}
+  \definecolor{mszpalegreen}{rgb}{0.910, 0.949, 0.910}
+  
+  \AtBeginEnvironment{theorem}{
+    \setbeamercolor{block title}{fg=white, bg=mszdarkblue}
+    \setbeamercolor{block body}{fg=black, bg=mszpaleblue}
+  }
+  
+  \AtBeginEnvironment{lemma}{
+    \setbeamercolor{block title}{fg=white, bg=mszdarkblue}
+    \setbeamercolor{block body}{fg=black, bg=mszpaleblue}
+  }
+  
+  \AtBeginEnvironment{proposition}{
+    \setbeamercolor{block title}{fg=white, bg=mszdarkblue}
+    \setbeamercolor{block body}{fg=black, bg=mszpaleblue}
+  }
+  
+  \AtBeginEnvironment{corollary}{
+    \setbeamercolor{block title}{fg=white, bg=mszdarkblue}
+    \setbeamercolor{block body}{fg=black, bg=mszpaleblue}
+  }
+  
+  \AtBeginEnvironment{conjecture}{
+    \setbeamercolor{block title}{fg=white, bg=mszdarkblue}
+    \setbeamercolor{block body}{fg=black, bg=mszpaleblue}
+  }
+  
+  \AtBeginEnvironment{definition}{
+    \setbeamercolor{block title}{fg=white, bg=mszdarkblue}
+    \setbeamercolor{block body}{fg=black, bg=mszpaleblue}
+  }
+  
+  \AtBeginEnvironment{example}{
+    \setbeamercolor{block title example}{fg=white, bg=mszdarkgreen}
+    \setbeamercolor{block body example}{fg=black, bg=mszpalegreen}
+  }
+  
+  \AtBeginEnvironment{proof}{
+    \setbeamercolor{block title}{fg=white, bg=mszdarkblue}
+    \setbeamercolor{block body}{fg=black, bg=mszpaleblue}
+  }
+  
+  \AtBeginEnvironment{alert}{
+    \setbeamercolor{block title alert}{fg=white, bg=mszdarkred}
+    \setbeamercolor{block body alert}{fg=black, bg=mszpalered}
+  }
+\fi
+
+\ifmszbeamernice
+  \IfFileExists{beamerthememetropolis.sty}{
+    \usepackage[sfdefault, lf]{FiraSans}
+    \usetheme[block=fill, background=dark]{metropolis}
+    \ifmszallsmallcaps
+      \metroset{titleformat = allsmallcaps}
+      \setbeamerfont{title}{size=\Large, series=\mdseries}
+      \setbeamerfont{section title}{size=\Large, series=\mdseries}
+      \setbeamerfont{block title}{size=\normalsize, series=\mdseries}
+      \setbeamerfont{block title alerted}{size=\normalsize, series=\mdseries}
+      \setbeamerfont{frametitle}{size=\large, series=\mdseries}
+      \setbeamerfont{caption name}{series=\mdseries}
+      \setbeamerfont{description item}{series=\mdseries}
+      \setbeamerfont{standout}{size=\Large, series=\mdseries}
+    \fi
+  }{
+    \usetheme{Rochester}
+    \usecolortheme{whale}
+  }
+\else
+  \usetheme{Rochester}
+  \usecolortheme{whale}
+\fi
+\fi

@@ -1,9 +1,9 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{chezbeamer}
+\ProvidesClass{mszbeamer}
 
 \LoadClass{beamer}
 
 \DeclareOption*{\PassOptionsToPackage{\CurrentOption}{beamer}}
 \ProcessOptions\relax
 
-\RequirePackage{chezbase}
+\RequirePackage{mszbase}
