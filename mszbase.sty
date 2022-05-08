@@ -78,7 +78,6 @@
 \NewDocumentCommand{\QQ}{}{\mathbb{Q}}
 \NewDocumentCommand{\RR}{}{\mathbb{R}}
 \NewDocumentCommand{\CC}{}{\mathbb{C}}
-\NewDocumentCommand{\HH}{}{\mathbb{H}}
 
 \newcommand{\intersect}{\DOTSB\cap} % can't use xparse because it protects \DOTSB
 \NewDocumentCommand{\bigintersect}{}{\bigcap}
@@ -97,19 +96,21 @@
 \DeclareMathOperator{\sign}{sign}
 
 % Combinatorics / Statistics
-\NewDocumentCommand{\EExp}{}{\operatorname*{\mathbb{E}}}
-\NewDocumentCommand{\PProb}{}{\operatorname*{\mathbb{P}}}
+\NewDocumentCommand{\Ex}{}{\operatorname*{\mathbb{E}}}
+\NewDocumentCommand{\Pr}{}{\operatorname*{\mathbb{P}}}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Cov}{Cov}
 
 % Geometry
 \NewDocumentCommand{\dg}{}{^\circ}
-\NewDocumentCommand{\seg}{m}{\overrightarrow{#1}}
+\NewDocumentCommand{\seg}{m}{\overline{#1}}
 \NewDocumentCommand{\ray}{m}{\overrightarrow{#1}}
+\NewDocumentCommand{\Line}{m}{\overleftrightarrow{#1}} % \line already exists
 \NewDocumentCommand{\dang}{}{\measuredangle}
 
 % Number Theory
 \RenewDocumentCommand{\mod}{m}{\ \mathrm{mod}\ #1}
+\DeclareMathOperator*{\gcd}{gcd}
 \DeclareMathOperator*{\lcm}{lcm}
 
 % Calculus
@@ -144,7 +145,7 @@
     {\pdnv{#2}{#3}{2}}
 }
 
-\let\obelus\div%
+\let\obelus\div
 \let\div\relax % was originally the division symbol
 \DeclareMathOperator{\grad}{grad}
 \DeclareMathOperator{\div}{div}
@@ -157,34 +158,7 @@
 
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\Char}{char} % characteristic of a ring; \char already exists
 \DeclareMathOperator{\img}{im} % \im is already defined for imaginary part
-\DeclareMathOperator{\Ker}{Ker}
-\DeclareMathOperator{\Img}{Im}
-\DeclareMathOperator{\Aut}{Aut}
-\DeclareMathOperator{\Tor}{Tor}
-\DeclareMathOperator{\Ext}{Ext}
-
-\NewDocumentCommand{\RP}{}{\mathbb{RP}}
-\NewDocumentCommand{\CP}{}{\mathbb{CP}}
-\DeclareMathOperator{\GL}{GL}
-\DeclareMathOperator{\SL}{SL}
-\DeclareMathOperator{\SO}{SO}
-\DeclareMathOperator{\SU}{SU}
-\DeclareMathOperator{\Orth}{O}
-
-\DeclareMathOperator{\Gal}{Gal}
-
-% Algebraic Geometry
-\NewDocumentCommand{\PP}{}{\mathbb{P}}
-\NewDocumentCommand{\VV}{}{\mathcal{V}}
-\NewDocumentCommand{\II}{}{\mathcal{I}}
-\DeclareMathOperator{\Spec}{Spec}
-
-% Category Theory
-\DeclareMathOperator{\Obj}{Obj}
-\DeclareMathOperator{\Hom}{Hom}
-\NewDocumentCommand{\cat}{}{\mathsf}
+\DeclareMathOperator{\ker}{ker}
 
 \endinput

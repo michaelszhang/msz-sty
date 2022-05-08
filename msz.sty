@@ -28,7 +28,7 @@
 
 \KOMAoptions{
   paper=letter,
-  fontsize=10pt,
+  fontsize=11pt,
   usegeometry,
   numbers=noendperiod,
 }
@@ -71,13 +71,11 @@
 % Macros
 \RequirePackage[shortlabels, inline]{enumitem}
 
-\NewDocumentCommand{\pog}{}{\qedhere}
-
 % Theorem Boxes
 \ifmsz@box\RequirePackage{tcolorbox}\fi
 
 % References
-\PassOptionsToPackage{pdftex, pdfcreator={LaTeX with msz.sty by Jason Chen}}{hyperref}
+\PassOptionsToPackage{pdftex, pdfcreator={LaTeX with msz.sty by Michael Zhang}}{hyperref}
 \ifmsz@gray
   \RequirePackage{hyperref}
 \else
@@ -97,7 +95,7 @@
 \RequirePackage[nameinlink]{cleveref}
 
 % SETUP
-\author{Jason Chen}
+\author{Michael Zhang}
 
 \ifmsz@date\else\date{~\vspace{-3em}}\fi
 
