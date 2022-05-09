@@ -138,8 +138,6 @@ These can be used with, e.g.:
 \end{example}
 ```
 
-<img src="screenshots/boxes1.png" width=700/>
-
 The `[Title]` or `<label>` arguments can be, and often are, omitted.
 The label can be used like `\cref{ex:label}` or `\Cref{ex:label}`,
 producing the text "example 1" or "Example 1" respectively.
@@ -168,8 +166,6 @@ The starred version of each environment indicates a non-numbered environment.
   content
 \end{adhoctheorem}
 ```
-
-<img src="screenshots/boxes2.png" width=700/>
 
 ## Package Options
 
