@@ -1,4 +1,4 @@
-\documentclass[nodate]{mszreport}
+\documentclass{mszreport}
 
 \title{Sample Document}
 
@@ -8,6 +8,145 @@
 
 \chapter{Boxes}
 
+\begin{theorem}
+    A sample theorem.
+\end{theorem}
+
+\begin{lemma}
+    A sample lemma.
+\end{lemma}
+
+\begin{claim}
+    A sample claim.
+\end{claim}
+
+\begin{proposition}
+    A sample proposition.
+\end{proposition}
+
+\begin{corollary}
+    A sample corollary.
+\end{corollary}
+
+\begin{conjecture}
+    A sample conjecture.
+\end{conjecture}
+
+\begin{algorithm}
+    A sample algorithm.
+\end{algorithm}
+
+\begin{definition}
+    A sample definition.
+\end{definition}
+
+\begin{example}
+    A sample example.
+\end{example}
+
+\begin{fact}
+    A sample fact.
+\end{fact}
+
+\begin{note}
+    A sample note.
+\end{note}
+
+\begin{problem}
+    A sample problem.
+\end{problem}
+
+\begin{question}
+    A sample question.
+\end{question}
+
+\begin{exercise}
+    A sample exercise.
+\end{exercise}
+
+\begin{remark}
+    A sample remark.
+\end{remark}
+
 \chapter{Commands}
+
+\section{Emphasizing}
+
+\begin{itemize}
+    \item \verb|\vocab| may be used to \vocab{bold and change color}.
+    \item \verb|\answer| may be used to \answer{change color}.
+\end{itemize}
+
+\section{Mathematical fonts}
+
+\begin{itemize}
+    \item \verb|\mbf{A}| may be used for \verb|\mathbf{A}|: $\mbf{A}$.
+    \item \verb|\mbb{A}| may be used for \verb|\mathbb{A}|: $\mbb{A}$.
+    \item \verb|\mcl{A}| may be used for \verb|\mathcal{A}|: $\mcl{A}$.
+    \item \verb|\mrm{A}| may be used for \verb|\mathrm{A}|: $\mrm{A}$.
+    \item \verb|\tx{A}| may be used for \verb|\text{A}|: $\tx{A}$.
+\end{itemize}
+
+\section{Delimiters}
+
+\begin{itemize}
+    \item \verb|\braces{}| may be used for $\braces{\tx{braces}}$.
+    \item \verb|\parens{}| may be used for $\parens{\tx{parentheses}}$.
+    \item \verb|\brackets{}| may be used for $\brackets{\tx{brackets}}$.
+    \item \verb|\bbrackets{}| may be used for $\bbrackets{\tx{double brackets}}$.
+    \item \verb|\angles{}| may be used for $\angles{\tx{angle brackets}}$.
+    \item \verb|\verts{}| may be used for $\verts{\tx{vertical bars}}$.
+    \item \verb|\Verts{}| may be used for $\Verts{\tx{double vertical bars}}$.
+    \item \verb|\floor{}| may be used for $\floor{\tx{floor delimiters}}$.
+    \item \verb|\ceil{}| may be used for $\ceil{\tx{ceiling delimiters}}$.
+\end{itemize}
+
+\section{Ordinal numbers}
+
+\begin{itemize}
+    \item \verb|\onth| may be used to denote superscript th, as in $0\onth$.
+    \item \verb|\onst| may be used to denote superscript st, as in $1\onst$.
+    \item \verb|\onnd| may be used to denote superscript nd, as in $2\onnd$.
+    \item \verb|\onrd| may be used to denote superscript rd, as in $3\onrd$.
+\end{itemize}
+
+\section{General}
+
+The following operators may be used:
+\begin{itemize}
+    \item \verb|\argmin| for $\argmin$,
+    \item \verb|\argmax| for $\argmax$,
+    \item \verb|\Re| for $\Re$,
+    \item \verb|\Im| for $\Im$,
+    \item \verb|\cis| for $\cis$,
+    \item \verb|\arcsinh| for $\arcsinh$,
+    \item \verb|\arccosh| for $\arccosh$,
+    \item \verb|\arctanh| for $\arctanh$, and
+    \item \verb|\sign| for $\sign$.
+\end{itemize}
+
+\section{Statistics}
+
+The following operators may be used:
+\begin{itemize}
+    \item \verb|\Prb| for the probability operator $\Prb$,
+    \item \verb|\Exp| for the expectation operator $\Exp$,
+    \item \verb|\Var| for the variance operator $\Var$, and
+    \item \verb|\Cov| for the covariance operator $\Cov$.
+\end{itemize}
+
+\section{Calculus}
+
+\begin{itemize}
+    \item \verb|\dv{f}{x}| may be used for a first derivative: $\dv{f}{x}$.
+    \item \verb|\ddv{f}{x}| may be used for a second derivative: $\ddv{f}{x}$.
+    \item \verb|\dnv{f}{x}{n}| may be used for an $n\onth$ derivative: $\dnv{f}{x}{n}$.
+    \item \verb|\pdv{f}{x}| may be used for a first partial derivative: $\pdv{f}{x}$.
+    \item \verb|\pddv{f}{x}| may be used for a second partial derivative: $\pddv{f}{x}$.
+    \item \verb|\pdnv{f}{x}{n}| may be used for an $n\onth$ partial derivative: $\pdnv{f}{x}{n}$.
+    \item \verb|\grad| may be used to denote the gradient operator: $\grad{f}$.
+    \item \verb|\div| may be used to denote the divergence operator: $\div{f}$.
+    \item \verb|\curl| may be used to denote the curl operator: $\curl{f}$.
+\end{itemize}
 
 \end{document}

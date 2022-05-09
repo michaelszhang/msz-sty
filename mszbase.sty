@@ -3,10 +3,11 @@
 \RequirePackage{xparse}
 \RequirePackage{etoolbox}
 
-\RequirePackage[OT1]{fontenc}
+\RequirePackage[T1]{fontenc}
 \RequirePackage[frak=boondox, frakscaled=0.98, scr=boondoxo]{mathalfa}
 
 \RequirePackage{mathtools, amssymb, amsthm}
+\RequirePackage{stmaryrd}
 \RequirePackage{nccmath}
 \RequirePackage{mszint} % More integrals (e.g. \oiint)
 
@@ -68,6 +69,12 @@
   #1%
 }
 
+% Ordinal numbers
+\NewDocumentCommand{\onth}{}{^{\tx{th}}}
+\NewDocumentCommand{\onst}{}{^{\tx{st}}}
+\NewDocumentCommand{\onnd}{}{^{\tx{nd}}}
+\NewDocumentCommand{\onrd}{}{^{\tx{rd}}}
+
 % Symbols
 \NewDocumentCommand{\eps}{}{\varepsilon}
 \NewDocumentCommand{\nullset}{}{\varnothing}
@@ -92,19 +99,19 @@
 \NewDocumentCommand{\bigunion}{}{\bigcup}
 
 % General
-\DeclareMathOperator*{\argmax}{argmax}
 \DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
 \RenewDocumentCommand{\Re}{}{\operatorname{Re}}
 \RenewDocumentCommand{\Im}{}{\operatorname{Im}}
 \DeclareMathOperator{\cis}{cis}
-\DeclareMathOperator{\arccosh}{arccosh}
 \DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
 \DeclareMathOperator{\arctanh}{arctanh}
 \DeclareMathOperator{\sign}{sign}
 
 % Combinatorics / Statistics
-\NewDocumentCommand{\Exp}{}{\operatorname*{\mbb{E}}}
 \NewDocumentCommand{\Prb}{}{\operatorname*{\mbb{P}}}
+\NewDocumentCommand{\Exp}{}{\operatorname*{\mbb{E}}}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Cov}{Cov}
 
@@ -125,30 +132,30 @@
     {d#2/d#3}
     {\frac{d #2}{d #3}}
 }
-\NewDocumentCommand{\dnv}{s m m m}{
-  \IfBooleanTF{#1}
-    {d^{#4}#2/d{#3}^{#4}}
-    {\frac{d^{#4} #2}{d {#3}^{#4}}}
-}
 \NewDocumentCommand{\ddv}{s m m}{
   \IfBooleanTF{#1}
     {\dnv*{#2}{#3}{2}}
     {\dnv{#2}{#3}{2}}
+}
+\NewDocumentCommand{\dnv}{s m m m}{
+  \IfBooleanTF{#1}
+    {d^{#4}#2/d{#3}^{#4}}
+    {\frac{d^{#4} #2}{d {#3}^{#4}}}
 }
 \NewDocumentCommand{\pdv}{s m m}{
   \IfBooleanTF{#1}
     {\partial{#2}/\partial{#3}}
     {\frac{\partial{#2}}{\partial{#3}}}
 }
-\NewDocumentCommand{\pdnv}{s m m m}{
-  \IfBooleanTF{#1}
-    {\partial^{#4}#2/\partial{#3}^{#4}}
-    {\frac{\partial^{#4} #2}{\partial{#3}^{#4}}}
-}
 \NewDocumentCommand{\pddv}{s m m}{
   \IfBooleanTF{#1}
     {\pdnv*{#2}{#3}{2}}
     {\pdnv{#2}{#3}{2}}
+}
+\NewDocumentCommand{\pdnv}{s m m m}{
+  \IfBooleanTF{#1}
+    {\partial^{#4}#2/\partial{#3}^{#4}}
+    {\frac{\partial^{#4} #2}{\partial{#3}^{#4}}}
 }
 
 \let\obelus\div
