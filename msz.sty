@@ -54,7 +54,7 @@
 
 % Page Margins
 \RequirePackage{geometry}
-\geometry{margin=1.5cm, includefoot}
+\geometry{margin=2.5cm, includefoot}
 \ifmsz@header\geometry{includehead}\fi
 
 % Headers
@@ -80,10 +80,7 @@
   \RequirePackage{hyperref}
 \else
   \RequirePackage[colorlinks]{hyperref} % load this last generally
-  \definecolor{urlcolor}{rgb}{0.9, 0, 0.5}
-  \definecolor{linkcolor}{rgb}{0, 0.2, 0.8}
-  \definecolor{citecolor}{rgb}{0, 0.6, 0.3}
-  \hypersetup{urlcolor=urlcolor, linkcolor=linkcolor, citecolor=citecolor}
+  \hypersetup{urlcolor=mszmagenta, linkcolor=mszred, citecolor=mszgreen}
 \fi
 
 % Algorithms/Code
@@ -141,9 +138,8 @@
       enhanced jigsaw,
       breakable,
       fonttitle=\ifmsz@sf\sffamily\fi\bfseries,
-      sharp corners,
-      boxrule=0pt,
-      leftrule=2pt,
+      rounded corners,
+      boxrule=1pt,
       left=5pt,
       coltitle=black,
       attach title to upper=\par,
@@ -151,26 +147,26 @@
     },
     mszbluebox/.style={
       mszbox,
-      coltitle=blue!80!black,
-      colframe=blue!80,
-      colback=blue!7,
+      coltitle=blue!60!gray,
+      colframe=blue!60!black,
+      colback=blue!6,
     },
     mszgreenbox/.style={
       mszbox,
-      coltitle=green!40!black,
-      colframe=green!70!black,
+      coltitle=green!60!gray,
+      colframe=green!60!black,
       colback=green!6,
     },
     mszorangebox/.style={
       mszbox,
-      coltitle=orange!80!black,
-      colframe=orange!98!black,
-      colback=orange!8,
+      coltitle=orange!60!gray,
+      colframe=orange!60!black,
+      colback=orange!6,
     },
     mszredbox/.style={
       mszbox,
-      coltitle=red!60!black,
-      colframe=red!80!black,
+      coltitle=red!60!gray,
+      colframe=red!60!black,
       colback=red!6,
     },
     mszbluethm/.style={mszbluebox, mszthm},
